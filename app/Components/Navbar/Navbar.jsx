@@ -1,25 +1,36 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import './Navbar.css' 
 import logo from '../Assets/logo.png'
 import cart_icon from '../Assets/cart_icon.png'
-const Navbar = () => {    
+import Image from 'next/image'
+const Navbar = () => {   
+    const [menu, setmenu] = useState("shop") 
   return (
     <>
 <div className="navbar">
 <div className="logo">
-    <img src={logo} alt="logo" />
+<Image
+      src={logo}
+      alt="logo"
+    />
     <p>acult</p>
 </div>
-<ul>
-    <li>Shop</li>
-    <li>Mens</li>
-    <li>Womens</li>
-    <li>Kids</li>
+<ul className="menu">
+    <li onClick={()=>{setmenu("shop")}}>Shop{menu === "shop"? <hr />:<></>} </li>
+    <li onClick={()=>{setmenu("mens")}}>Mens {menu === "mens"? <hr />:<></>}</li>
+    <li onClick={()=>{setmenu("womens")}}>Womens {menu === "womens"? <hr />:<></>}</li>
+    <li onClick={()=>{setmenu("kids")}}>Kids {menu === "kids"? <hr />:<></>}</li>
 
 </ul>
 <div className="navbar-btn"> 
 <button>Log In</button>
-<img src="{cart_icon}" alt="cart" />
+<Image
+      src={cart_icon}
+    
+      alt="cart"
+    />
+    <div className="carticon">0</div>
 </div>
 </div>
     </>
