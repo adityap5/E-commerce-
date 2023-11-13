@@ -7,11 +7,13 @@ import ShopCategory from './Pages/ShopCategory'
 import Product from './Pages/Product'
 import Cart from './Pages/Cart'
 import LoginSignup from './Pages/LoginSignup'
+import Footer from './Components/Footer/Footer'
+
+
 const page = () => {
 
   return (
   <>
-  
   <BrowserRouter>
   <Navbar/>
  <Routes>
@@ -26,8 +28,9 @@ const page = () => {
 
  </Routes>
  
-
+<Footer/>
   </BrowserRouter>
+
   </>
   )
 }
